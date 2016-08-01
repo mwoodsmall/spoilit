@@ -28,15 +28,6 @@ var barrels = [
     // App specific barrels.
     'app',
     'app/shared',
-    'app/spoiler',
-    'app/spoilers',
-    'app/header',
-    'app/spoiler-table',
-    'app/spoiler-form',
-    'app/imdb-info',
-    'app/home',
-    'app/movie-list',
-    'app/voter',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {
