@@ -1,0 +1,9 @@
+span {
+  font-size: 23px;
+  margin-left:5px;
+  font-weight:light;
+}
+
+.up, .down {
+  cursor: pointer;
+}

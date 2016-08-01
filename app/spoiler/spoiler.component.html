@@ -1,0 +1,27 @@
+<div class="spoiler-header row">
+  <div class="title col-md-10">
+    <h3>{{ movie.title }}</h3>
+  </div>
+  <div class="votes col-md-2">
+    <spl-voter [spoiler]="spoiler"></spl-voter>
+  </div>
+</div>
+
+<div class="spoiler-body row" >
+  <div class="scary"> {{ spoiler.text }} </div>
+</div>
+
+<div class="spoiler-footer row">
+    <div (click)="handleDetailClick()" class="detail-wrapper col-md-6">
+      <button class="btn btn-link">View Spoiler Detail</button>
+    </div>
+    <div class="next-wrapper col-md-6">
+        <button (click)="handlePreviousClick(spoiler)" *ngIf="shouldShowPrevious(spoiler)"class="btn btn-link"> Previous Spoiler </button>
+      <button (click)="handleNextClick(spoiler)" *ngIf="shouldShowNext(spoiler)"class="btn btn-link"> Next Spoiler </button>
+      <button (click)="handleBackClick()" *ngIf="shouldShowBack(spoiler)"class="btn btn-link"> Return to Movie List </button>
+    </div>
+
+    <div *ngIf="showDetail" class="detail col-md-12">
+      {{ spoiler.detail }}
+    </div>
+</div>

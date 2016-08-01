@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-10">
+    <h3>Spoiler Form</h3>
+    <form *ngIf="active" (ngSubmit)="onSubmit()" #spoilerForm="ngForm">
+      <div class="form-group">
+        <label for="movie">Movie</label>
+        <input (blur)="handleMovieTitleBlur()" name="movie" [(ngModel)]="spoilerModel.movie.title" type="text" class="form-control" required #movie="ngModel">
+        <div [hidden]="movie.valid || movie.pristine" class="alert alert-danger">
+          Movie is required
+        </div>
+        <div *ngIf="imdbInfoFound === false" class="alert alert-danger">
+          Movie not found in IMDB
+        </div>
+        <div *ngIf="imdbInfoFound">
+          <h3>IMDB Info</h3>
+          <spl-imdb-info [movieInfo]="spoilerModel.movie"> </spl-imdb-info>
+        </div>
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="title">Spoiler Title</label>
+        <input name="title" [(ngModel)]="spoilerModel.title" type="text" class="form-control" required  #title="ngModel">
+        <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
+          Spoiler Title is required
+        </div>
+      </div> -->
+
+      <div class="form-group">
+        <label for="spoiler">Spoiler</label>
+        <input name="spoiler" [(ngModel)]="spoilerModel.text" type="text" class="form-control" required  #spoiler="ngModel">
+        <div [hidden]="spoiler.valid || spoiler.pristine" class="alert alert-danger">
+          Spoiler is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="detail">Spoiler Detail</label>
+        <textarea name="detail" [(ngModel)]="spoilerModel.detail" class="form-control" rows="3" required  #detail="ngModel"></textarea>
+        <div [hidden]="detail.valid || detail.pristine" class="alert alert-danger">
+          Spoiler Detail is required
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default" [disabled]="!spoilerForm.form.valid || !imdbInfoFound">Submit</button>
+    </form>
+  </div>
+</div>

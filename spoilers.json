@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Suprise Ending",
+    "votes": 43,
+    "text": "It sinks...",
+    "detail": "Jack sacrifices himself so Rose can live",
+    "movie": {
+      "id": "1",
+      "title": "Titanic"
+    }
+  }, {
+    "id": 2,
+    "title": "Luke I am...",
+    "votes": 10002,
+    "text": "YOUR FATHER",
+    "detail": "Darth Vader is Luke's dad",
+    "movie": {
+      "id":2,
+      "title": "Star Wars: The Empire Strikes Back"
+    }
+  }
+]

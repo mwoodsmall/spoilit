@@ -1,0 +1,13 @@
+
+<div *ngIf="movieInfo.posterUrl && movieInfo.plot" class="row">
+  <div class="col-md-1 text-md-center">
+    <img class="img-rounded" [src]="movieInfo.posterUrl" />
+  </div>
+  <div class="col-md-11">
+    <h3>{{ movieInfo.title }} </h3>
+    <p class="plot">{{ movieInfo.plot }} </p>
+  </div>
+</div>
+<div class="row" *ngIf="!movieInfo.posterUrl && !movieInfo.plot">
+  <p>Movie not found on IMDB</p>
+</div>

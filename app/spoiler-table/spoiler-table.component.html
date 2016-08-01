@@ -1,0 +1,9 @@
+<table class="table table-hover">
+  <tbody>
+    <tr *ngFor="let spoiler of spoilers" (click)="handleSpoilerClick(spoiler)">
+       <td class="col-md-6">{{ spoiler.title }}</td>
+       <td class="col-md-3">{{ spoiler.movie.title }}</td>
+       <td class="col-md-3">{{ spoiler.votes }}</td>
+     </tr>
+   </tbody>
+ </table>

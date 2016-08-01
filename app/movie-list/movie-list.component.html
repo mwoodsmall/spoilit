@@ -1,0 +1,14 @@
+<ul class="list-group">
+  <li class="list-group-item row"*ngFor="let movie of movies">
+    <div class="col-md-{{ buttonOptions.display ? '10' : '12'}}">
+      <spl-imdb-info [movieInfo]="movie"></spl-imdb-info>
+    </div>
+    <div *ngIf="buttonOptions.display" class="col-md-2">
+      <div class="row">
+        <button (click)="handleButtonClick(movie)" class="btn btn-primary">
+          {{ buttonOptions.text }}
+        </button>
+      </div>
+    </div>
+  </li>
+</ul>
