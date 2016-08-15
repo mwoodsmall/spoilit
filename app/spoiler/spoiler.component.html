@@ -3,7 +3,7 @@
     <h3>{{ movie.title }}</h3>
   </div>
   <div class="votes col-md-2">
-    <spl-voter [spoiler]="spoiler"></spl-voter>
+    <spl-voter (voteChange)="handleVoteChange($event)" [votes]="spoiler.votes"></spl-voter>
   </div>
 </div>
 
