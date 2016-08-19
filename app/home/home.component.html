@@ -1,1 +1,5 @@
-home page
+<div class="none" *ngIf="noMovies">
+  no movies to spoil :(
+</div>
+
+<spl-movie-list (onMovieClicked)="handleMovieClicked($event)" [movies]="movies"> </spl-movie-list>

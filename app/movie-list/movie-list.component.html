@@ -1,7 +1,3 @@
-<div class="none" *ngIf="!movies || !movies.length">
-  no movies to spoil :(
-</div>
-
 <ul class="list-group">
   <li class="list-group-item row" *ngFor="let movie of movies">
     <div class="col-md-12" (click)="handleMovieClick(movie)">
